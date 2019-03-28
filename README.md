@@ -72,7 +72,10 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* [Naomi Woodruff](https://github.com/naywood)
+* [Joonwoo Choi](https://github.com/joon3703)
+* [Josh Manuel](https://github.com/joshespr)
+* [Mario Rodriguez](https://github.com/mariorodriguezdeleon)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
