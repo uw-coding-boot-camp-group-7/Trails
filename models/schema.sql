@@ -12,6 +12,6 @@ CREATE TABLE users
   first_name VARCHAR(30) NOT NULL,
   last_name VARCHAR(30) NOT NULL,
   location VARCHAR(30) NOT NULL,
-  passport VARCHAR(30) NOT NULL,
+  passport VARCHAR(30),
   PRIMARY KEY(id)
 );
