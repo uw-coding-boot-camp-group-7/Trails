@@ -1,3 +1,10 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+.title {
+  /* background-image: url(../background.jpeg); */
+  color: yellow;
+
+}
+
