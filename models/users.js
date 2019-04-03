@@ -6,6 +6,14 @@ module.exports = function(sequelize, DataTypes) {
       autoIncrement: true,
       primaryKey: true
     },
+    firstName: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    lastName: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     email: {
       type: DataTypes.STRING,
       allowNull: false
@@ -18,19 +26,16 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
-    firstName: {
-      type: DataTypes.STRING,
+    createdAt: {
+      type: DataTypes.DATE,
       allowNull: false
-    },
-    lastName: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    location: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      defaultValue: "Seattle"
     }
   });
+
+  Users.associate = function(models) {
+    Users.hasOne(models.Passport, {
+      onDelete: "cascade"
+    });
+  };
   return Users;
 };
