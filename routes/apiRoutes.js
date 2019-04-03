@@ -1,24 +1,35 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  // Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
+  // Get all users
+  app.get("/api/all", function(req, res) {
+    db.Users.findAll({}).then(function(hikersdb) {
+      res.json(hikersdb);
     });
   });
 
-  // Create a new example
-  app.post("/api/examples", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
+  // Get all Ids
+  app.get("/api/:id/all", function(req, res) {
+    db.Users.findAll({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(hikersdb) {
+      res.json(hikersdb);
     });
   });
 
-  // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.json(dbExample);
+  // Create a new user
+  app.post("/api/user", function(req, res) {
+    db.Users.create(req.body).then(function(hikersdb) {
+      res.json(hikersdb);
+    });
+  });
+
+  // Delete an user by id
+  app.delete("/api/user/:id", function(req, res) {
+    db.Users.destroy({ where: { id: req.params.id } }).then(function(hikersdb) {
+      res.json(hikersdb);
     });
   });
 };
