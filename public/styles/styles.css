@@ -18,3 +18,19 @@ body{
   background-color:  #3a6129;
 }
 
+/* this is the sticky footer */
+html, body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+.section {
+  flex: 1 0 auto;
+}
+.footer {
+  flex-shrink: 0;
+ } 
+
+ 
