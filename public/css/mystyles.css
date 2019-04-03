@@ -310,13 +310,14 @@ body {
   line-height: 1.5; }
 
 a {
-  color: #3273dc;
+  color: #3a6129;
   cursor: pointer;
   text-decoration: none; }
   a strong {
     color: currentColor; }
   a:hover {
-    color: #363636; }
+    color:
+    #759069; }
 
 code {
   background-color: whitesmoke;
@@ -1143,7 +1144,7 @@ a.has-text-danger:hover, a.has-text-danger:focus {
   box-shadow: none !important; }
 
 .box {
-  background-color: white;
+  background:rgba(0, 0, 0, 0.7);
   border-radius: 6px;
   box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
   color: #4a4a4a;
@@ -1659,11 +1660,12 @@ a.box:active {
         box-shadow: none;
         color: #fff; }
   .button.is-success {
-    background-color: #23d160;
+    background-color: #3a6129;
     border-color: transparent;
     color: #fff; }
     .button.is-success:hover, .button.is-success.is-hovered {
-      background-color: #22c65b;
+      background-color: 
+      #759069;
       border-color: transparent;
       color: #fff; }
     .button.is-success:focus, .button.is-success.is-focused {
@@ -1672,7 +1674,8 @@ a.box:active {
       .button.is-success:focus:not(:active), .button.is-success.is-focused:not(:active) {
         box-shadow: 0 0 0 0.125em rgba(35, 209, 96, 0.25); }
     .button.is-success:active, .button.is-success.is-active {
-      background-color: #20bc56;
+      background-color: 
+      #759069;
       border-color: transparent;
       color: #fff; }
     .button.is-success[disabled],
