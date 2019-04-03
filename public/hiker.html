@@ -1,59 +1,78 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Trails -- Hiker Login</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <link rel="stylesheet" href="./styles/styles.css">
-    <!-- <link rel="stylesheet" href="./css/mystyles.css"> -->
 
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trails -- Hiker Login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <link rel="stylesheet" href="./styles/styles.css">
+  <!-- <link rel="stylesheet" href="./css/mystyles.css"> -->
+</head>
 
-
-
-  </head>
-  <body>
-    <div class="section">
+<body>
+  <div class="section">
     <nav class="level">
-          <p class="level-item has-text-centered">
-            <a class="link is-info">Home</a>
+      <p class="level-item has-text-centered">
+        <a class="link is-info">Home</a>
+      </p>
+      <p class="level-item has-text-centered">
+        <a class="link is-info" href="hiker.html">Become a Hiker</a>
+      </p>
+      <p class="level-item has-text-centered">
+        <img src="https://bulma.io/images/bulma-type.png" alt="" style="height: 30px;">
+      </p>
+      <p class="level-item has-text-centered">
+        <a class="link is-info">View Trails</a>
+      </p>
+      <p class="level-item has-text-centered">
+        <a class="link is-info">Contact</a>
+      </p>
+    </nav>
+    <div class="containerInput" >
+<!--username input-->
+      <div class="column is-half ">
+        <div class="field">
+          <p class="control has-icons-left">
+            <input class="input is-rounded" type="text" placeholder="Username">
+            <span class="icon is-small is-left">
+              <i class="fas fa-lock"></i>
+            </span>
           </p>
-          <p class="level-item has-text-centered">
-            <a class="link is-info" href="hiker.html">Become a Hiker</a>
+        </div>
+<!--email input-->
+        <div class="field">
+          <p class="control has-icons-left">
+            <input class="input is-rounded" type="text" placeholder="Email">
+            <span class="icon is-small is-left">
+              <i class="fas fa-lock"></i>
+            </span>
           </p>
-          <p class="level-item has-text-centered">
-            <img src="https://bulma.io/images/bulma-type.png" alt="" style="height: 30px;">
+        </div>
+<!--password input-->
+        <div class="field">
+          <p class="control has-icons-left">
+            <input class="input is-rounded" type="password" placeholder="Password">
+            <span class="icon is-small is-left">
+              <i class="fas fa-lock"></i>
+            </span>
           </p>
-          <p class="level-item has-text-centered">
-            <a class="link is-info">View Trails</a>
-          </p>
-          <p class="level-item has-text-centered">
-            <a class="link is-info">Contact</a>
-          </p>
-        </nav>
-    <div class="container">
-      <div class="column is-half is-centered">
-      <input class="input is-rounded" type="text" placeholder="Username">
-      <input class="input is-rounded" type="text" placeholder="Email">
-      <div class="field">
-        <p class="control has-icons-left">
-          <input class="input is-rounded" type="password" placeholder="Password">
-          <span class="icon is-small is-left">
-            <i class="fas fa-lock"></i>
-          </span>
-        </p>
-      </div>  
-    </div> 
-     </div>
+        </div>
+
+      </div>
     </div>
+  </div>
 
   <footer class="footer">
     <div class="content has-text-centered">
       <p>
-        <strong>Trails</strong> by <a href="https://github.com/naywood">Naomi Woodruff, </a><a href="https://github.com/joon3703">Joonwoo Choi, </a><a href="https://github.com/joshespr">Josh Manuel</a><a href="https://github.com/mariorodriguezdeleon"> and Mario Rodriguez</a>. 
+        <strong>Trails</strong> by <a href="https://github.com/naywood">Naomi Woodruff, </a><a
+          href="https://github.com/joon3703">Joonwoo Choi, </a><a href="https://github.com/joshespr">Josh Manuel</a><a
+          href="https://github.com/mariorodriguezdeleon"> and Mario Rodriguez</a>.
       </p>
     </div>
   </footer>
-  </body>
+</body>
+
 </html>

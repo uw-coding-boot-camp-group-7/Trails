@@ -18,6 +18,7 @@ body{
   background-color:  #3a6129;
 }
 
+/* this is the sticky footer */
 html, body {
   height: 100%;
 }
@@ -30,4 +31,8 @@ body {
 }
 .footer {
   flex-shrink: 0;
-}
+ } 
+
+ .containerInputs{
+   align: center;
+ }
