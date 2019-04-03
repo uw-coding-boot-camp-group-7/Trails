@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "124Intaglio",
+    "password": "",
     "database": "hikersdb",
     "host": "localhost",
     "dialect": "mysql"
