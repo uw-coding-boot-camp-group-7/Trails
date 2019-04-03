@@ -1,31 +1,38 @@
-// var axios = require("axios");
+module.exports = function() {
+  var queryURL =
+    "https://www.hikingproject.com/data/get-trails?lat=47.6062&lon=-122.3320&maxDistance=50&key=200440393-24756b1a160e4136ab4606caf960655b";
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+  }).then(function(response) {
+    var trails = response.data.trails;
 
-// module.exports = function() {
-//   var queryURL =
-//     "https://www.hikingproject.com/data/get-trails?lat=40.0274&lon=-105.2519&maxDistance=10&key=200440393-24756b1a160e4136ab4606caf960655b";
-//     "https://www.hikingproject.com/data/get-conditions?ids=7001635,7002742,7000108,7002175,7005207&key=200440393-24756b1a160e4136ab4606caf960655b"
-//   // Acquire event data from HikingProj API via AXIOS
-//   axios
-//     .get(queryURL)
-//     .then(function(response) {
-//       console.log(response.data.trails);
-//     })
-//     .catch(bug);
-// };
+    for (var i = 0; i < trails.length; i++) {
+      var trail = $("<a>").text(trails[i].name);
+      var summary = $("<a>").text(trails[i].summary);
+      var difficulty = $("<a>").text(trails[i].difficulty);
+      var stars = $("<a>").text(trails[i].stars);
+      var votes = $("<a>").text(trails[i].starVotes);
+      var location = $("<a>").text(trails[i].location);
+      var url = $("<a>").text(trails[i].url);
+      var img = $("<a>").text(trails[i].imgMedium);
+      var length = $("<a>").text(trails[i].length);
+      var status = $("<a>").text(trails[i].conditionStatus);
+      var condition = $("<a>").text(trails[i].conditionDetails);
 
-// // Create a bug function that thoroughly catches errors
-// function bug(error) {
-//   if (error.response) {
-//     // The request was made but the response received falls out of the range
-//     console.log(error.response.data);
-//     console.log(error.response.status);
-//     console.log(error.response.headers);
-//   } else if (error.request) {
-//     // The request was made but no response was received
-//     console.log(error.request);
-//   } else {
-//     // Error triggered in request set up
-//     console.log("Error: ", error.message);
-//   }
-//   console.log(error.config);
-// }
+      $("#placeholder").append(
+        trail,
+        summary,
+        difficulty,
+        stars,
+        votes,
+        location,
+        url,
+        img,
+        length,
+        status,
+        condition
+      );
+    }
+  });
+};
