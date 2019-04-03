@@ -4,11 +4,11 @@
   "description": "Project 2 Starter",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js ", 
+    "start": "concurrently \"node server.js\" \"npm run css-watch\"", 
     "lint": "eslint **/*.js --quiet",
     "fix": "eslint --fix .",
     "test": "npm run lint && cross-env NODE_ENV=test mocha -u tdd --reporter spec --exit",
-    "css-build": "node-sass --omit-source-map-url sass/mystyles.scss css/mystyles.css",
+    "css-build": "node-sass --omit-source-map-url public/sass/mystyles.scss public/css/mystyles.css",
     "css-watch": "npm run css-build -- --watch"
   },
   "license": "ISC",
@@ -23,6 +23,7 @@
     "bulma": "^0.7.4",
     "chai": "^4.1.2",
     "chai-http": "^4.0.0",
+    "concurrently": "^4.1.0",
     "cross-env": "^5.2.0",
     "eslint": "^4.19.1",
     "eslint-config-prettier": "^2.9.0",
