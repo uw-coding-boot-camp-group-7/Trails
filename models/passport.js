@@ -1,9 +1,15 @@
 module.exports = function(sequelize, DataTypes) {
   var Passport = sequelize.define("Passport", {
+    photo: {
+      type: DataTypes.BLOB
+    },
     location: {
       type: DataTypes.STRING,
       allowNull: false,
       defaultValue: "Seattle"
+    },
+    bio: {
+      type: DataTypes.TEXT
     },
     hikedTrails: {
       type: DataTypes.STRING,
@@ -15,12 +21,5 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-//   Passport.associate = function(models) {
-//     Passport.hasOne(models.Users, {
-//       foreignKey: {
-//         allowNull: false
-//       }
-//     });
-//   };
   return Passport;
 };
