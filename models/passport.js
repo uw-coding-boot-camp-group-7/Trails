@@ -15,12 +15,5 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-//   Passport.associate = function(models) {
-//     Passport.hasOne(models.Users, {
-//       foreignKey: {
-//         allowNull: false
-//       }
-//     });
-//   };
   return Passport;
 };
