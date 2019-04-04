@@ -1,7 +1,7 @@
 module.exports = function(sequelize, DataTypes) {
   var Passport = sequelize.define("Passport", {
     photo: {
-      type: DataTypes.LONGBLOB
+      type: DataTypes.BLOB
     },
     location: {
       type: DataTypes.STRING,
