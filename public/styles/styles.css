@@ -1,3 +1,36 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+a , .title{
+  color: #3a6129; 
+}
+
+body{
+    background-image: url(../images/background.jpeg);
+    background-size:     cover;                      
+    background-repeat:   no-repeat;
+    background-position: center center;  
+
+}
+
+.button.is-success {
+  background-color:  #3a6129;
+}
+
+/* this is the sticky footer */
+html, body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+.section {
+  flex: 1 0 auto;
+}
+.footer {
+  flex-shrink: 0;
+ } 
+
+ 

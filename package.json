@@ -4,10 +4,12 @@
   "description": "Project 2 Starter",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "concurrently \"node server.js\" \"npm run css-watch\"",
     "lint": "eslint **/*.js --quiet",
     "fix": "eslint --fix .",
-    "test": "npm run lint && cross-env NODE_ENV=test mocha -u tdd --reporter spec --exit"
+    "test": "npm run lint && cross-env NODE_ENV=test mocha -u tdd --reporter spec --exit",
+    "css-build": "node-sass --omit-source-map-url public/sass/mystyles.scss public/css/mystyles.css",
+    "css-watch": "npm run css-build -- --watch"
   },
   "license": "ISC",
   "dependencies": {
@@ -18,13 +20,29 @@
     "sequelize": "^4.41.2"
   },
   "devDependencies": {
+    "bulma": "^0.7.4",
     "chai": "^4.1.2",
     "chai-http": "^4.0.0",
+    "concurrently": "^4.1.0",
     "cross-env": "^5.2.0",
     "eslint": "^4.19.1",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-prettier": "^2.6.2",
     "mocha": "^5.2.0",
+    "node-sass": "^4.11.0",
     "prettier": "^1.13.7"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uw-coding-boot-camp-group-7/project2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/uw-coding-boot-camp-group-7/project2/issues"
+  },
+  "homepage": "https://github.com/uw-coding-boot-camp-group-7/project2#readme"
 }
