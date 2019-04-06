@@ -99,3 +99,5 @@ $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
 
 //divs load upon search
+
+
