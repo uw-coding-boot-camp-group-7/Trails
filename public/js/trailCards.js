@@ -1,7 +1,17 @@
 // Create a function to pull trails from the Hiking project API via AJAX call
 function getTrails() {
+  var $city = $("#trailTerm").val();
   var queryURL =
-    "https://www.hikingproject.com/data/get-trails?lat=47.6062&lon=-122.3320&maxDistance=50&key=200440393-24756b1a160e4136ab4606caf960655b";
+    "https://maps.googleapis.com/maps/api/geocode/json?address=" + $city + "&bounds=34.172684,-118.604794|34.236144,-118.500938&key=AIzaSyADwTKftdeqrk5jC1DSCZJLk9nkGi_aJk0";
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+  }).then(function(response) {
+    var lattitude = response.results[0].geometry.location.lat;
+    var longitude = response.results[0].geometry.location.lng;
+
+    var queryURL =
+    "https://www.hikingproject.com/data/get-trails?lat=" + lattitude + "&lon=" + longitude + "&maxDistance=50&key=200440393-24756b1a160e4136ab4606caf960655b";
     $.ajax({
     url: queryURL,
     method: "GET"
@@ -78,9 +88,10 @@ function getTrails() {
     $("#trailcards-col").empty();
     $("#trailcards-col").append(trailcards);
   });
+});
 }
 
-// Button event: shows trails 
+// Button event: shows trails
 $("#viewTrails").on("click", function(event) {
   event.preventDefault();
   getTrails();
