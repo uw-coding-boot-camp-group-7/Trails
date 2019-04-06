@@ -6,16 +6,16 @@ $("#add-user").on("click", function(event) {
 
     // make a newUser obj
     var newUser = {
-        name: $("#username").val(),
+        username: $("#username").val(),
         email: $("#email").val(),
         password: $("#password").val()
     };
 
     // send an AJAX POST-request with jQuery
-    $.post("/api/user", newUser)
+    $.post("/api/new", newUser)
         .then(function(data) {
             console.log(data);
-            alert("Thank you for singing up!");
+            alert("Thank you for signing up!");
         });
 
     // empty each input box by replacing the value with an empty string

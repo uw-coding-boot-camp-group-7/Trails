@@ -22,8 +22,12 @@ module.exports = function(app) {
   });
 
   // 2 Create a new user
-  app.post("/api/:id/:hike/complete", function(req, res) {
-    db.Users.create(req.body).then(function(hikersdb) {
+  app.post("/api/new", function(req, res) {
+    const username = req.body.username;
+
+    console.log(username);
+
+    db.Users.create(req.body).then(hikersdb => {
       res.json(hikersdb);
     });
   });
