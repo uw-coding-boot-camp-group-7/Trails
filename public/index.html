@@ -1,46 +1,52 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Trails</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trails</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
 
-    <link rel="stylesheet" href="./styles/styles.css">
-    <link rel="stylesheet" href="./css/mystyles.css">
-    <!-- Link to local trailCards CSS -->
-    <link rel="stylesheet" href="./css/trailcards.css">
-  </head>
-  <body>
-    <div class="section">
-    <nav class="level">
-          
+  <link rel="stylesheet" href="./styles/styles.css">
+  <link rel="stylesheet" href="./css/mystyles.css">
+  <!-- Link to local trailCards CSS -->
+  <link rel="stylesheet" href="./css/trailcards.css">
+</head>
+
+<body>
+  <div class="section">
+      <nav class="level">
+          <!--links to hiker.html-->
           <p class="level-item has-text-centered">
             <a href="hiker.html">
-              <img src="images/userpage.png" alt="HTML tutorial" style="height:75px;" class="is-primary tooltip" data-tooltip="Become a User">
+              <img src="images/userpage.png" alt="HTML tutorial" style="height:75px;" class="is-primary tooltip"
+                data-tooltip="Become a User">
             </a>
           </p>
+          <!--links to index.html-->
           <p class="level-item ">
             <a href="index.html">
               <img src="images/nounmountain.png" alt="HTML tutorial" style="height:175px;">
             </a>
           </p>
+          <!--links to passport.html-->
           <p class="level-item has-text-centered">
             <a href="passport.html">
               <img src="images/map.png" alt="HTML tutorial" style="height:75px;">
             </a>
           </p>
-          
-      </nav>
-      
-      </div>
-  
+    
+        </nav>
+
+  </div>
+
   <section class="section">
     <div class="container ">
-       
+
       <div class="column">
         <h1 class="title">
           Hello World...
@@ -48,29 +54,31 @@
         <p class="subtitle">
           Welcome to <strong>Trails</strong>! Become a hiker and keep a passport of your favorites or search for hikes!
         </p>
-        <input class="input is-rounded" type="text" placeholder="enter search term here" id="trailTerm"><a class="button is-success is-rounded" id="viewTrails">View Trails</a>      
+        <input class="input is-rounded" type="text" placeholder="enter search term here" id="trailTerm"><a
+          class="button is-success is-rounded" id="viewTrails">View Trails</a>
       </div>
-      
+
       <!-- Div for appended trailcards -->
       <div class="column" id="trailcards-col"></div>
-      
-    </div> 
 
-    
+    </div>
+
+
   </section>
   <footer class="footer">
     <div class="content has-text-centered">
       <p>
-        <strong>Trails</strong> by <a href="https://github.com/naywood">Naomi Woodruff, </a><a href="https://github.com/joon3703">Joonwoo Choi, </a><a href="https://github.com/joshespr">Josh Manuel</a><a href="https://github.com/mariorodriguezdeleon"> and Mario Rodriguez</a>. 
+        <strong>Trails</strong> by <a href="https://github.com/naywood">Naomi Woodruff, </a><a
+          href="https://github.com/joon3703">Joonwoo Choi, </a><a href="https://github.com/joshespr">Josh Manuel</a><a
+          href="https://github.com/mariorodriguezdeleon"> and Mario Rodriguez</a>.
       </p>
     </div>
   </footer>
 
-    <!-- Link to jQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- Link to trailCards js -->
-    <script src="./js/trailCards.js"></script>
-    </body>
+  <!-- Link to jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- Link to trailCards js -->
+  <script src="./js/trailCards.js"></script>
+</body>
+
 </html>
-
-
