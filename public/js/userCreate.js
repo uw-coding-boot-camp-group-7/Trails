@@ -1,14 +1,14 @@
 
 // This js file adds user data into users table from login page.
 
-$("add-user").on("click", function(event) {
+$("#add-user").on("click", function(event) {
     event.preventDefault();
 
     // make a newUser obj
     var newUser = {
-        name: $("#username").val().trim(),
-        email: $("#email").val().trim(),
-        password: $("#password").val().trim()
+        name: $("#username").val(),
+        email: $("#email").val(),
+        password: $("#password").val()
     };
 
     // send an AJAX POST-request with jQuery
