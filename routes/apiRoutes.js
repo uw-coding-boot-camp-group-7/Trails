@@ -22,7 +22,7 @@ module.exports = function(app) {
   });
 
   // 2 Create a new user
-  app.post("/api/user", function(req, res) {
+  app.post("/api/:id/:hike/complete", function(req, res) {
     db.Users.create(req.body).then(function(hikersdb) {
       res.json(hikersdb);
     });
@@ -33,10 +33,11 @@ module.exports = function(app) {
     db.Passport.update()
   });
 
-  // 3 Delete an user by id
-  app.delete("/api/user/:id", function(req, res) {
+  // Delete an user by id
+  app.delete("/api/:id/:hike/delete", function(req, res) {
     db.Users.destroy({ where: { id: req.params.id } }).then(function(hikersdb) {
       res.json(hikersdb);
     });
   });
+
 };
