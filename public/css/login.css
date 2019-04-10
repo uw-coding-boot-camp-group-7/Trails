@@ -1,0 +1,9 @@
+.cloak {
+    display: none;
+}
+
+
+#sign-up {
+    float:right;
+    background:#333;
+}

@@ -9,10 +9,14 @@
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
   <link rel="stylesheet" href="./styles/styles.css">
   <link rel="stylesheet" href="./css/mystyles.css">
+  <link rel="stylesheet" href="./css/login.css">
 </head>
 
 <body>
   <div class="section">
+    <!-- ================================================= -->
+    <!-- Nav bar -->
+
     <nav class="level">
       <!--links to hiker.html-->
       <p class="level-item has-text-centered">
@@ -33,42 +37,78 @@
           <img src="images/map.png" alt="HTML tutorial" style="height:75px;">
         </a>
       </p>
-
+      
     </nav>
-    <!--username input-->
-    <div class="column is-half is-offset-one-quarter">
-      <div class="field is-centered">
-        <p class="control has-icons-left">
-          <input id="username" class="input is-rounded" type="text" placeholder="Username">
-          <span class="icon is-small is-left">
-            <i class="fas fa-lock"></i>
-          </span>
-        </p>
-      </div>
-      <!--email input-->
-      <div class="field">
-        <p class="control has-icons-left">
-          <input id="email" class="input is-rounded" type="text" placeholder="Email">
-          <span class="icon is-small is-left">
-            <i class="fas fa-lock"></i>
-          </span>
-        </p>
-      </div>
-      <!--password input-->
-      <div class="field">
-        <p class="control has-icons-left">
-          <input id="password" class="input is-rounded" type="password" placeholder="Password">
-          <span class="icon is-small is-left">
-            <i class="fas fa-lock"></i>
-          </span>
-        </p>
-      </div>
-      <a id="add-user" class="button is-success is-rounded">Create</a>
-      <a class="button is-success is-rounded">Login</a>
+    <!-- ================================================= -->
+    <!-- Log in console -->
+    
+      <div id="login-console" class="column is-half is-offset-one-quarter">
+        
+        <!--username input-->
+        <div class="field is-centered">
+          <p class="control has-icons-left">
+            <input id="username" class="input is-rounded" type="text" placeholder="Username">
+            <span class="icon is-small is-left">
+              <i class="fas fa-lock"></i>
+            </span>
+          </p>
+        </div>
+        
+        <!--password input-->
+        <div class="field">
+          <p class="control has-icons-left">
+            <input id="password" class="input is-rounded" type="password" placeholder="Password">
+            <span class="icon is-small is-left">
+              <i class="fas fa-lock"></i>
+            </span>
+          </p>
+        </div>
 
-    </div>
+        <!-- Buttons -->
+        <a id="log-in" class="button is-success is-rounded">Login</a>
+        <a id="sign-up" class="button is-success is-rounded">Create an account</a>
+      </div>
+    <!-- ================================================= -->
+    <!-- Sign up console -->
+    
+      <div id="signup-console" class="column is-half is-offset-one-quarter cloak">
+        
+        <!--email input-->
+        <div class="field">
+          <p class="control has-icons-left">
+            <input id="email" class="input is-rounded" type="text" placeholder="Email">
+            <span class="icon is-small is-left">
+              <i class="fas fa-lock"></i>
+            </span>
+          </p>
+        </div>
 
+        <!--username input-->
+        <div class="field is-centered">
+          <p class="control has-icons-left">
+            <input id="username" class="input is-rounded" type="text" placeholder="Username">
+            <span class="icon is-small is-left">
+              <i class="fas fa-lock"></i>
+            </span>
+          </p>
+        </div>
+
+        <!--password input-->
+        <div class="field">
+          <p class="control has-icons-left">
+            <input id="password" class="input is-rounded" type="password" placeholder="Password">
+            <span class="icon is-small is-left">
+              <i class="fas fa-lock"></i>
+            </span>
+          </p>
+        </div>
+
+        <!-- Buttons -->
+        <a id="add-user" class="button is-success is-rounded">Sign up</a>
+      </div>    
   </div>
+  <!-- ================================================= -->   
+  <!-- Footer -->
 
   <footer class="footer">
     <div class="content has-text-centered">
@@ -79,6 +119,8 @@
       </p>
     </div>
   </footer>
+  <!-- ================================================= -->   
+  
   <!-- Link to jQuery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <!-- Link to userCreate js -->

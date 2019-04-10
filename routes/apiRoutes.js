@@ -15,43 +15,57 @@ module.exports = function(app) {
         id: req.params.id
       }
     }).then(function(hikersdb) {
-      //res.json(hikersdb);
-      console.log(hikersdb);
-      res.send("String datareturn");
+      res.json(hikersdb);
     });
   });
 
-  // 2 Create a new user
+  // This get method tells user that user needs to login to view passport page. If user logged in, it returns "Welcome back"
+  app.get('/public/passport.html', function(request, response) {
+    if (request.session.loggedin) {
+      response.send('Welcome back, ' + request.session.username + '!');
+    } else {
+      response.send('Please login to view this page!');
+    }
+    response.end();
+  });
+
+  // Create a new user
   app.post("/api/new", function(req, res) {
-    const username = req.body.username;
-
-    console.log(username);
-
     db.Users.create(req.body).then(hikersdb => {
       res.json(hikersdb);
     });
   });
 
-  // Create a new user
-  // app.post('/auth', function(request, response) {
-  //   var username = request.body.username;
-  //   var password = request.body.password;
-  //   if (username && password) {
-  //     connection.query('SELECT * FROM Users WHERE username = ? AND password = ?', [username, password], function(error, results, fields) {
-  //       if (results.length > 0) {
-  //         request.session.loggedin = true;
-  //         request.session.username = username;
-  //         response.redirect('/home');
-  //       } else {
-  //         response.send('Incorrect Username and/or Password!');
-  //       }			
-  //       response.end();
-  //     });
-  //   } else {
-  //     response.send('Please enter Username and Password!');
-  //     response.end();
-  //   }
-  // });
+  // User name and Password Validation
+  app.get('/api/validate', function(req, res) {
+    var username = req.body.username;
+    var password = req.body.password;
+    if (username && password) {
+      db.Users.findAll({
+        where: {
+          username: username,
+          password: password
+        }
+        
+      }).then(function(error, results, fields) {
+        console.log("user found!");
+        if (error) {console.log("error here!"); throw error;}
+        
+        if (results.length > 0) {
+          req.session.loggedin = true;
+          req.session.username = username;
+          console.log("logged in!");
+          res.redirect('/public/passport.html');
+        } else {
+          res.send('Incorrect Username and/or Password!');
+        }			
+        res.end();
+      });
+    } else {
+      res.send('Please enter Username and Password!');
+      res.end();
+    }
+  });
 
   // This will put in passport in new entry with the user id and hike param.
   app.put("/api/:id/:hike", function(res, req) {
