@@ -21,6 +21,7 @@
     "express-handlebars": "^3.0.0",
     "express-session": "^1.15.6",
     "mysql2": "^1.6.4",
+    "nodemon": "^1.18.11",
     "react-geocode": "^0.1.2",
     "sequelize": "^4.41.2"
   },

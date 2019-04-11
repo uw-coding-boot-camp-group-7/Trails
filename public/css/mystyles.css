@@ -3703,11 +3703,15 @@ a.tag:hover {
     content: "\0227B"; }
 
 .card {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.5);
   box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
-  color: #4a4a4a;
+  color: black;
   max-width: 100%;
-  position: relative; }
+  position: relative;
+  border-radius: 80px;
+ 
+  
+ }
 
 .card-header {
   background-color: transparent;
@@ -3717,7 +3721,7 @@ a.tag:hover {
 
 .card-header-title {
   align-items: center;
-  color: #363636;
+  color: black;
   display: flex;
   flex-grow: 1;
   font-weight: 700;

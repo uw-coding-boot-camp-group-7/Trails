@@ -17,54 +17,60 @@
   <link rel="stylesheet" href="./css/trailcards.css">
 </head>
 
-<body>
-  <div class="section">
+<body id="landing">
+<div class="section">
       <nav class="level">
-          <!--links to hiker.html-->
-          <p class="level-item has-text-centered">
-            <a href="hiker.html">
-              <img src="images/userpage.png" alt="HTML tutorial" style="height:75px;" class="is-primary tooltip"
-                data-tooltip="Become a User">
-            </a>
-          </p>
           <!--links to index.html-->
           <p class="level-item ">
             <a href="index.html">
-              <img src="images/nounmountain.png" alt="HTML tutorial" style="height:175px;">
+              <img src="images/nounmountain2.png" alt="HTML tutorial" style="height:300px;">
             </a>
           </p>
-          <!--links to passport.html-->
-          <p class="level-item has-text-centered">
-            <a href="passport.html">
-              <img src="images/map.png" alt="HTML tutorial" style="height:75px;">
-            </a>
-          </p>
-    
-        </nav>
 
-  </div>
+          
+    </nav>
 
-  <section class="section">
-    <div class="container ">
+    <div class="container">
+        <div class="columns">
+            <div class="column"></div>
+            <div class="column is-one-quarter">
+                    <a href="hiker.html">    
+                <div class="card">
+                            <div class="card-content">
+                                    <p class="level-item has-text-centered">
+                                             <img src="images/userpage.png" alt="HTML tutorial" style="height:75px;">
+                                          </p>
+                              <p class="has-text-centered">
+                               Create a hiker account to save your favorite hikes to your passport!
+                              </p>
+                            </div>
+                          </div>
+                        </a>
+            </div>
+            <div class="column is-one-quarter">
+                    <a href="search.html">
+                    <div class="card">
+                            <div class="card-content">
+                                    <p class="level-item has-text-centered">
+                                              <img src="images/map.png" alt="HTML tutorial" style="height:75px;">
+                                          </p>
+                                          <p class="has-text-centered">
+                                            Search your city name for the 10 hikes most popular hikes near you!
+                                            </p>
+                            </div>
+                          </div>
+                        </a>
+            </div>
+            <div class="column"></div>
 
-      <div class="column">
-        <h1 class="title">
-          Hello World...
-        </h1>
-        <p class="subtitle">
-          Welcome to <strong>Trails</strong>! Become a hiker and keep a passport of your favorites or search for hikes!
-        </p>
-        <input class="input is-rounded" type="text" placeholder="enter search term here" id="trailTerm">
-        <a class="button is-success is-rounded" id="viewTrails">View Trails</a>      
-      </div>
-
-      <!-- Div for appended trailcards -->
-      <div class="column" id="trailcards-col"></div>
-
+        </div>
     </div>
+</section>
 
-
-  </section>
+  
+<!-- 
+<div class="section">
+</div>  
   <footer class="footer">
     <div class="content has-text-centered">
       <p>
@@ -73,7 +79,7 @@
           href="https://github.com/mariorodriguezdeleon"> and Mario Rodriguez</a>.
       </p>
     </div>
-  </footer>
+  </footer> -->
 
   <!-- Link to jQuery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
