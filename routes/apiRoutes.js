@@ -31,9 +31,9 @@ module.exports = function(app) {
 
   // Create a new user
   app.post("/api/new", function(req, res) {
-    var username = req.query.username;
-    var password = req.query.password;
-    var email = req.query.email;
+    var username = req.body.username;
+    var password = req.body.password;
+    var email = req.body.email;
     
     if (username && password && email) {
       db.Users.create(req.body).then(hikersdb => {
