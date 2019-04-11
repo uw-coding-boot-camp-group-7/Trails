@@ -31,41 +31,55 @@ module.exports = function(app) {
 
   // Create a new user
   app.post("/api/new", function(req, res) {
-    db.Users.create(req.body).then(hikersdb => {
-      res.json(hikersdb);
-    });
+    var username = req.query.username;
+    var password = req.query.password;
+    var email = req.query.email;
+    
+    if (username && password && email) {
+      db.Users.create(req.body).then(hikersdb => {
+        res.json(hikersdb);
+      });
+    } else {
+      console.log("Please enter your information!");
+      res.send("Please enter your username, password and email");
+    }
   });
 
   // User name and Password Validation
   app.get('/api/validate', function(req, res) {
-    var username = req.body.username;
-    var password = req.body.password;
+    var username = req.query.username;
+    var password = req.query.password;
+    
+    // console.log(req);
     if (username && password) {
       db.Users.findAll({
         where: {
           username: username,
           password: password
         }
+      }).then(hikersdb => {
+        console.log("user request registered");
+        // console.table(hikersdb);
         
-      }).then(function(error, results, fields) {
-        console.log("user found!");
-        if (error) {console.log("error here!"); throw error;}
-        
-        if (results.length > 0) {
+        if (hikersdb.length > 0) {
+          console.log("user found");
           req.session.loggedin = true;
           req.session.username = username;
-          console.log("logged in!");
-          res.redirect('/public/passport.html');
+          console.log(req.session.username + " has logged in");
+          res.redirect('../public/passport.html');
         } else {
           res.send('Incorrect Username and/or Password!');
+          console.log(req.query.username + " is not found");
         }			
         res.end();
       });
     } else {
+      console.log("please enter something")
       res.send('Please enter Username and Password!');
-      res.end();
+    res.end();
     }
   });
+  
 
   // This will put in passport in new entry with the user id and hike param.
   app.put("/api/:id/:hike", function(res, req) {
