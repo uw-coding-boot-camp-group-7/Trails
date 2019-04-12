@@ -43,11 +43,12 @@ $("#log-in").on("click", function(event) {
   };
 
   console.table(user);
+  console.log("You are logged in!");
 
   // Validate with jQuery
   $.get("/api/validate", user);
  
-
+  
   // empty each input box by replacing the value with an empty string
   $("#username").val("");
   $("#email").val("");

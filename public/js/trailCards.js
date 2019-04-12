@@ -165,11 +165,3 @@ $("#viewTrails").on("click", function(event) {
   getTrails();
 });
 
-<<<<<<< HEAD
-=======
-$(document).on('keypress',function(event) {
-  if(event.which == 13) {
-      getTrails();
-  }
-});
->>>>>>> be366813d9ec9b6d5d813c79538f889ed4a94ae8
