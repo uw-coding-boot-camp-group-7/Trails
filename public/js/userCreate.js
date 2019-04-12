@@ -42,14 +42,15 @@ $("#log-in").on("click", function(event) {
       password: $("#password").val().trim()
   };
 
-  console.table(user);
+  // console.table(user);
 
   // Validate with jQuery
-  $.get("/api/validate", user);
+  $.post("/api/validate", user);
+
  
 
   // empty each input box by replacing the value with an empty string
   $("#username").val("");
   $("#email").val("");
   $("#password").val("");
-})
+});
