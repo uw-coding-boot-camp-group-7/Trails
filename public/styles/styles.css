@@ -15,7 +15,7 @@ body{
 }
 
 #landing {
-  background-image: url(../images/Blurred.jpg);
+  background-image: url(../images/blurred.jpg);
     background-size:     cover;                      
     background-repeat:   no-repeat;
     background-position: center center;  
@@ -41,4 +41,8 @@ body {
   flex-shrink: 0;
  } 
 
- 
+ .card:hover { 
+  background-color: rgba(200, 200, 200, 0.5)}
+
+
+  

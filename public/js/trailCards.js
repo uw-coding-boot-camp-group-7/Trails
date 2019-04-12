@@ -165,8 +165,3 @@ $("#viewTrails").on("click", function(event) {
   getTrails();
 });
 
-$(document).on('keypress',function(event) {
-  if(event.which == 13) {
-      getTrails();
-  }
-});

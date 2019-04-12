@@ -9,14 +9,6 @@ module.exports = function(app) {
     });
   });
 
-
-  //TODO: get all passport objects
-  // app.get("/api/passports-all", function(req, res) {
-  //   db.Passports.findAll({}).then(function(hikersdb) {
-  //     res.json(hikersdb);
-  //   });
-  // });
-
   // Get all Ids
   app.get("/api/:id/all", function(req, res) {
     db.Users.findAll({
@@ -55,13 +47,14 @@ module.exports = function(app) {
   });
 
   // User name and Password Validation
-  app.post("/api/validate", function(req, res) {
 
-    var username = req.body.username;
-    var password = req.body.password;
-
-    console.log(username + ' ' + password);
+  app.post('/api/validate', function(req, res) {
+    var username = req.query.username;
+    var password = req.query.password;
     
+     //console.log(req);
+     //console.log(username + password);
+
     if (username && password) {
       db.Users.findAll({
         where: {
