@@ -32,7 +32,7 @@ function getTrails() {
       <article class="media">
         <div class="media-left">
           <figure class="image is-98x98" style="height:394px;width:auto;">
-            <img src="` + trails[i].imgSmallMed + `" alt="Image" id="hikeImage">
+            <img src="` + trails[i].imgSmallMed + `" alt="No Image" id="hikeImage">
           </figure>
         </div>`;
       
@@ -95,7 +95,7 @@ function getTrails() {
       <article class="media">
         <div class="media-left">
           <figure class="image is-98x98" style="height:394px;width:auto;">
-            <img src="` + trails[x].imgSmallMed + `" alt="Image" id="hikeImage">
+            <img src="` + trails[x].imgSmallMed + `" alt="No Image" id="hikeImage">
           </figure>
         </div>`;
       
@@ -165,3 +165,8 @@ $("#viewTrails").on("click", function(event) {
   getTrails();
 });
 
+$(document).on('keypress',function(event) {
+  if(event.which == 13) {
+      getTrails();
+  }
+});
