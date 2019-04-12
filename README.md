@@ -1,36 +1,34 @@
 # Trails by Compass Crew
 
-One Paragraph of project description goes here
+Getting outside and enjoying the outdoors is somthing most everyon loves.  There are many reasons to head out to the woods, unplug from all of the technology of our daily lives and recharge.  Trails is your passport to the outdoors no matter where you go around the globe...yes, around the globe.
+
+Trails helps you find the top hikes in many major cities around the world. And with your Trails Passport, you can keep track of hikes you'd like to on and the ones that you've completed.
+
+Don't want to head out alone? With Trail Buddies, you can join an Adventure Group or create your own.  So, stop waiting and go find your perfect adventure.
 
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
+1. Clone or Fork and then clone a copy of this repo onto your local machine with 'git clone < repo url >'
+2. Download all dependancies with 'npm i'
+3. Create a MySQL database and update the config.json file with your database name.
+4. In your console navigate to the root folder of the project and enter 'node server.js' to launch the app.
+
 ### Prerequisites
 
-What things you need to install the software and how to install them
+What things you need to install the software and how to install them.  At minimum you'll need:
 
+1. Express
 ```
-Give examples
+npm install express
 ```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
+2. Node
+[Install Node](https://nodejs.org/en/download/)
+3. MySQL2
 ```
-Give the example
+npm install mysql2
 ```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the tests
 
@@ -67,20 +65,23 @@ Add additional notes about how to deploy this on a live system
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
+If you'd like to contribute, please feel free to reach out to any of the original author.
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+We use [GitHub](http://github.com/) for versioning. For the versions available, see the [tags on this repository](https://github.com/uw-coding-boot-camp-group-7/Trails). 
 
 ## Authors
 
 * [Naomi Woodruff](https://github.com/naywood)
+    SDE: Designed and engineered the pages for the app. Provided all the great aesthetics that provide this app with its sharp,
+    clean and polished feel.
 * [Joonwoo Choi](https://github.com/joon3703)
+    SDE: Engineered the controller pieces of the application and middleware for the application to move data from
+    the modle to the view.  Also worked on the routing pieces.
 * [Josh Manuel](https://github.com/joshespr)
+    SDE/Tech Lead: Engineereed the model, api calls, search, and routing for the app. Also provided support to other members of the team.
 * [Mario Rodriguez](https://github.com/mariorodriguezdeleon)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+    TPM/Tech Lead: Provided team with a structured approach to tackling this project by helping define MVP, creating and assigning tasks. Also provided workflow setups with continous integration utilizing Heroku.
 
 ## License
 
