@@ -5,5 +5,10 @@
 
 #sign-up {
     float:right;
-    background:#333;
+    background-color:#333;
 }
+
+
+#sign-up:hover{
+    background-color: #595959;
+  }

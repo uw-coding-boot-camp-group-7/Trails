@@ -96,3 +96,4 @@ $("#viewTrails").on("click", function(event) {
   event.preventDefault();
   getTrails();
 });
+

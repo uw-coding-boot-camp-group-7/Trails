@@ -41,4 +41,8 @@ body {
   flex-shrink: 0;
  } 
 
- 
+ .card:hover { 
+  background-color: rgba(200, 200, 200, 0.5)}
+
+
+  
