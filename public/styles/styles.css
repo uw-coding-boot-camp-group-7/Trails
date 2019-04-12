@@ -30,19 +30,35 @@ body{
 html, body {
   height: 100%;
 }
+
 body {
   display: flex;
   flex-direction: column;
 }
+
 .section {
   flex: 1 0 auto;
 }
+
 .footer {
   flex-shrink: 0;
- } 
+} 
 
- .card:hover { 
-  background-color: rgba(200, 200, 200, 0.5)}
+.card:hover { 
+  background-color: #3a6129b8;
 
-
+}
+/* 
+.card span {
+  max-width: 0;
+  -webkit-transition: max-width 1s;
+  transition: max-width 1s;
+  display: inline-block;
+  vertical-align: top;
+  white-space: nowrap;
+  overflow: hidden;
+}
   
+.card:hover span {
+  max-width: 700rem;
+} */
