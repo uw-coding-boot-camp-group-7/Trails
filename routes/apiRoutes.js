@@ -20,16 +20,6 @@ module.exports = function(app) {
     });
   });
 
-  // This get method tells user that user needs to login to view passport page. If user logged in, it returns "Welcome back"
-  app.get('/public/passport.html', function(request, response) {
-    if (request.session.loggedin) {
-      response.send('Welcome back, ' + request.session.username + '!');
-    } else {
-      response.send('Please login to view this page!');
-    }
-    response.end();
-  });
-
   // Create a new user
   app.post("/api/new", function(req, res) {
     var username = req.body.username;
@@ -47,43 +37,49 @@ module.exports = function(app) {
   });
 
   // User name and Password Validation
+  app.post("/api/validate", function(req, res) {
 
-  app.post('/api/validate', function(req, res) {
-    var username = req.query.username;
-    var password = req.query.password;
+    var user = req.body.username;
+    var pass = req.body.password;
     
-     //console.log(req);
-     //console.log(username + password);
-
-    if (username && password) {
+    if (user && pass) {
       db.Users.findAll({
         where: {
-          username: username,
-          password: password
+          username: user,
+          password: pass
         }
       }).then(hikersdb => {
         console.log("user request registered");
-        // console.table(hikersdb);
-        
         if (hikersdb.length > 0) {
           console.log("user found");
           req.session.loggedin = true;
-          req.session.username = username;
+          req.session.username = user;
           console.log(req.session.username + " has logged in");
-          let url = path.join(__dirname,"/public/passport.html")
-          console.log(url);
-          res.redirect('../public/passport.html');
+
+          res.redirect('/public/passport.html');
+
         } else {
           res.send('Incorrect Username and/or Password!');
-          console.log(req.query.username + " is not found");
+          console.log(req.body.username + " is not found");
           res.end();
         }			
       });
     } else {
-      console.log("please enter something")
+      // console.log("please enter something")
       res.send('Please enter Username and Password!');
-    res.end();
+      res.end();
     }
+  });
+
+  // This get method tells user that user needs to login to view passport page. If user logged in, it returns "Welcome back"
+  app.get('/public/passport.html', function(request, response) {
+    if (request.session.loggedin) {
+      response.send('Welcome back, ' + request.session.username + '!');
+      response.sendFile(path.join(__dirname, '/public/passport.html'));
+    } else {
+      response.send('Please login to view this page!');
+    }
+    response.end();
   });
   
 
