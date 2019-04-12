@@ -1,16 +1,10 @@
 var db = require("../models");
+const path = require ('path');
 
 module.exports = function(app) {
-  // 1 Get all users
+  // 1 Get all users (working)
   app.get("/api/all", function(req, res) {
     db.Users.findAll({}).then(function(hikersdb) {
-      res.json(hikersdb);
-    });
-  });
-
-  // Get all passports
-  app.get("/passport/all", function(req, res) {
-    db.Passports.findAll({}).then(function(hikersdb) {
       res.json(hikersdb);
     });
   });
@@ -41,7 +35,7 @@ module.exports = function(app) {
     var username = req.body.username;
     var password = req.body.password;
     var email = req.body.email;
-    
+    //TODO: validate unique username, email
     if (username && password && email) {
       db.Users.create(req.body).then(hikersdb => {
         res.json(hikersdb);
@@ -53,12 +47,14 @@ module.exports = function(app) {
   });
 
   // User name and Password Validation
+
   app.post('/api/validate', function(req, res) {
     var username = req.query.username;
     var password = req.query.password;
     
      //console.log(req);
      //console.log(username + password);
+
     if (username && password) {
       db.Users.findAll({
         where: {
@@ -74,12 +70,14 @@ module.exports = function(app) {
           req.session.loggedin = true;
           req.session.username = username;
           console.log(req.session.username + " has logged in");
+          let url = path.join(__dirname,"/public/passport.html")
+          console.log(url);
           res.redirect('../public/passport.html');
         } else {
           res.send('Incorrect Username and/or Password!');
           console.log(req.query.username + " is not found");
+          res.end();
         }			
-        res.end();
       });
     } else {
       console.log("please enter something")
