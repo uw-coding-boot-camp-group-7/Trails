@@ -37,49 +37,56 @@ module.exports = function(app) {
   });
 
   // User name and Password Validation
-  app.post("/api/validate", function(req, res) {
+  app.get("/api/validate", function(req, res) {
 
     var user = req.body.username;
     var pass = req.body.password;
+
+    let userPass = path.join(__dirname, '../public/passport.html');
+
+    console.log(userPass);
+
+    res.sendFile(userPass);
     
-    if (user && pass) {
-      db.Users.findAll({
-        where: {
-          username: user,
-          password: pass
-        }
-      }).then(hikersdb => {
-        console.log("user request registered");
-        if (hikersdb.length > 0) {
-          console.log("user found");
-          req.session.loggedin = true;
-          req.session.username = user;
-          console.log(req.session.username + " has logged in");
+    // if (user && pass) {
+    //   db.Users.findAll({
+    //     where: {
+    //       username: user,
+    //       password: pass
+    //     }
+    //   }).then(hikersdb => {
+    //     console.log("user request registered");
+    //     if (hikersdb.length > 0) {
+    //       console.log("user found");
+    //       req.session.loggedin = true;
+    //       req.session.username = user;
+    //       console.log(req.session.username + " has logged in");
 
-          res.redirect('/public/passport.html');
+    //       res.redirect('/public/passport.html');
 
-        } else {
-          res.send('Incorrect Username and/or Password!');
-          console.log(req.body.username + " is not found");
-          res.end();
-        }			
-      });
-    } else {
-      // console.log("please enter something")
-      res.send('Please enter Username and Password!');
-      res.end();
-    }
+    //     } else {
+    //       res.send('Incorrect Username and/or Password!');
+    //       console.log(req.body.username + " is not found");
+    //       res.end();
+    //     }			
+    //   });
+    // } else {
+    //   // console.log("please enter something")
+    //   res.send('Please enter Username and Password!');
+    //   res.end();
+    // }
   });
 
   // This get method tells user that user needs to login to view passport page. If user logged in, it returns "Welcome back"
   app.get('/public/passport.html', function(request, response) {
-    if (request.session.loggedin) {
-      response.send('Welcome back, ' + request.session.username + '!');
-      response.sendFile(path.join(__dirname, '/public/passport.html'));
-    } else {
-      response.send('Please login to view this page!');
-    }
-    response.end();
+    response.sendFile(path.join(__dirname, '../public/passport.html'));
+    // if (request.session.loggedin) {
+    //   response.send('Welcome back, ' + request.session.username + '!');
+    //   response.sendFile(path.join(__dirname, '/public/passport.html'));
+    // } else {
+    //   response.send('Please login to view this page!');
+    // }
+    // response.end();
   });
   
 

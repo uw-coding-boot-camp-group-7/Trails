@@ -34,6 +34,7 @@ $("#add-user").on("click", function(event) {
 // this is prototype version of userCreate.js I will keep modify this.
 
 $("#log-in").on("click", function(event) {
+  
   event.preventDefault();
 
   // make a newUser obj
@@ -41,17 +42,16 @@ $("#log-in").on("click", function(event) {
       username: $("#username").val().trim(),
       password: $("#password").val().trim()
   };
-  
-  console.table(user);
-  console.log("You are logged in!");
+
+  // console.table(user);
 
   // Validate with jQuery
-  $.post("/api/validate", user);
+  $.get("/api/validate");
 
  
-  
+
   // empty each input box by replacing the value with an empty string
-  $("#username").val("");
-  $("#email").val("");
-  $("#password").val("");
+  // $("#username").val("");
+  // $("#email").val("");
+  // $("#password").val("");
 });
